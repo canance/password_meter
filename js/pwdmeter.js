@@ -361,12 +361,12 @@ function readpwdfile(content){
 		var results=chkPass(passwordPwd.value);
 		// alert(results[2]);
 		var p =parseInt(results[2]);
-		if (i == 0 && p <=7) {out="<pre>"+textByLine[i]+"&#9;&#9;&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
-			else if (i ==0 && p <=14) {out="<pre>"+textByLine[i]+"&#9;&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
-			else if (i ==0 && p > 14 ) {out="<pre>"+textByLine[i]+"&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
-			else if (p <=7) {out=out +"<pre>"+textByLine[i]+"&#9;&#9;&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
-			else if (p <=14) {out=out +"<pre>"+textByLine[i]+"&#9;&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
-			else {out=out +"<pre>"+textByLine[i]+"&#9;"+ results[0]+"&#9;"+ results[1]+"</pre>"}
+		if (i == 0 && p <=7) {out=textByLine[i] +", "+ results[0]+ ", " + results[1] + "\n"}
+			else if (i ==0 && p <=14) {out=textByLine[i]+ ", " + results[0]+ ", " +  results[1]+ "\n"}
+			else if (i ==0 && p > 14 ) {out=textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "\n"}
+			else if (p <=7) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "\n"}
+			else if (p <=14) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "\n"}
+			else {out=out + textByLine[i]+"&#9;"+ results[0]+ ", " +  results[1]+"\n"}
 			count--;
 			i++;
 		}
