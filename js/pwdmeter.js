@@ -344,8 +344,6 @@ function initPwdChk(restart) {
 
 
 
-
-
 /*Check pwd file*/
 function readpwdfile(content){
 
@@ -355,7 +353,13 @@ function readpwdfile(content){
 	alert("Number of pwds: "+textByLine.length)
 	var out ="";
 	var i =0;
-		while(count !=0){
+	var stats = [];
+  stats['Very Weak'] = 0;
+  stats['Weak'] = 0;
+  stats['Good'] = 0;
+  stats['Strong'] = 0;
+  stats['Very Strong'] = 0;
+  while(count !=0){
 		$("passwordPwd").value = textByLine[i];
 		$("passwordTxt").value = textByLine[i];
 		var results=chkPass(passwordPwd.value);
@@ -367,10 +371,17 @@ function readpwdfile(content){
 			else if (p <=7) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "</br>"}
 			else if (p <=14) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "</br>"}
 			else {out=out + textByLine[i]+", "+ results[0]+ ", " +  results[1]+"</br>"}
-			count--;
+			stats[results[1]]++;
+      count--;
 			i++;
 		}
-	 document.write(out);
 
+   document.write("<h1>Stats</h1></br>");
+   Object.entries(stats).forEach(([key, value]) => {
+   document.write(`${key}: ${value} </br>`);
+});
+   document.write("</br></br><hr><h1>Results</h1></br>");
+	 document.write(out);
+  
 }
 addLoadEvent(function() { initPwdChk(1); });
