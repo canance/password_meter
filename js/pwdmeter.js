@@ -361,12 +361,12 @@ function readpwdfile(content){
 		var results=chkPass(passwordPwd.value);
 		// alert(results[2]);
 		var p =parseInt(results[2]);
-		if (i == 0 && p <=7) {out=textByLine[i] +", "+ results[0]+ ", " + results[1] + "</br>}
+		if (i == 0 && p <=7) {out=textByLine[i] +", "+ results[0]+ ", " + results[1] + "</br>"}
 			else if (i ==0 && p <=14) {out=textByLine[i]+ ", " + results[0]+ ", " +  results[1]+ "</br>"}
 			else if (i ==0 && p > 14 ) {out=textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "</br>"}
 			else if (p <=7) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "</br>"}
 			else if (p <=14) {out=out + textByLine[i]+ ", " +  results[0]+ ", " +  results[1]+ "</br>"}
-			else {out=out + textByLine[i]+"&#9;"+ results[0]+ ", " +  results[1]+"\n"}
+			else {out=out + textByLine[i]+", "+ results[0]+ ", " +  results[1]+"</br>"}
 			count--;
 			i++;
 		}
